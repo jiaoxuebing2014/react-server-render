@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <meta name="renderer" content="webkit">
+        <!--忽略页面中的数字识别为电话号码-->
+        <meta name="format-detection" content="telephone=no">
+        <!--UC强制全屏-->
+        <meta name="full-screen" content="yes">
+        <!--QQ强制全屏-->
+        <meta name="x5-fullscreen" content="true">
+        <!--UC应用模式-->
+        <meta name="browsermode" content="application">
+        <!--QQ应用模式-->
+        <meta name="x5-page-mode" content="app">
+        <!--删除默认的苹果工具栏和菜单栏，开启全屏显示-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!--去掉Windows Phone点击时的高亮效果-->
+        <meta name="msapplication-tap-highlight" content="no"/>
+        <!--设置桌面图标的标题-->
+        <meta name="apple-mobile-web-app-title" content="卡行天下">
+        <!--改变顶部状态条的颜色-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="shortcut icon" href="/favicon.png">
+        <title>芊语妈妈</title>
+        <script>
+            (function (win, doc) {
+                /*window.applicationCache.addEventListener("updateready",function(){
+                    window.location.reload(true);
+                });*/
+
+                function setSize() {
+                    doc.documentElement.style.fontSize = 100 * document.documentElement.clientWidth / 750 + 'px';
+                }
+
+                setSize();
+                win.addEventListener('resize', setSize, false)
+            })(window, document);
+            window.__INITIAL_STATE__ = <%- JSON.stringify(state) %>;
+        </script>
+    </head>
+    <body>
+        <div id="root"><%- root %></div>
+    </body>
+</html>

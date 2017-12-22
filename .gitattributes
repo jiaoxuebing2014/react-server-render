@@ -1,0 +1,5 @@
+*.css linguist-language=javascript
+*.scss linguist-language=javascript
+*.js linguist-language=javascript
+*.jsx linguist-language=javascript
+*.html linguist-language=javascript

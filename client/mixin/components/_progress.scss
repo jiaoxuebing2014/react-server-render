@@ -1,0 +1,44 @@
+@charset "utf-8";
+//-----------------------------------------------------
+// progress scss
+//-----------------------------------------------------
+
+
+// 变量
+//---------------------------------
+$progressBorder:                 1px solid $gray !default;//边框颜色
+$progressPercentBgColor:         $primary !default;//进度条百分比背景色
+$progressRadiusSwitch:           true !default;//默认不启用圆角
+
+// 斑马线渐变
+// 传入的$bgColor即为实现的斑马线背景色
+@mixin gradient-striped($bgColor: #555, $angle: 45deg) {
+  background-color: $bgColor;
+  @include gradient-angle($angle, rgba(255,255,255,.3) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.3) 50%, rgba(255,255,255,.3) 75%, transparent 75%, transparent);
+}
+
+// 样式
+//---------------------------------
+.progress{
+	@if length($progressBorder) > 1{
+		border: $progressBorder;
+		padding: 2px;
+	}
+	height: 18px;
+
+	.progress-percent{
+		display: block;
+		width: 50%;
+		height: 100%;
+		@include gradient-striped($progressPercentBgColor, 45deg);
+		background-size: 50px 50px;
+	}
+
+	//是否启用圆角
+	@if $progressRadiusSwitch{
+		&,
+		& .progress-percent{
+			@include border-radius(13px);
+		}
+	}
+}

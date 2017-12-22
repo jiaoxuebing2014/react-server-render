@@ -1,0 +1,1 @@
+export const GLOBAL_API_DOMAIN = '/api';   //接口地址
